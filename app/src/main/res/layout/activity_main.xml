@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.kotas.funnycalc.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.3"
+        android:orientation="vertical"
+        android:background="@color/colorWhiteBackground">
+
+
+        <TextView
+            android:id="@+id/tvResult"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.6"
+            android:textSize="50dp"
+            android:text="0"
+            android:textAlignment="textEnd"
+            />
+
+        <TextView
+            android:id="@+id/tvExpresion"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.4"
+            android:textSize="32dp"
+            android:text="sample text"
+            android:textAlignment="viewEnd"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.75"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.75"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:background="@color/colorNumPadGray">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/btnSeven"
+                    android:text="7"
+                    style="@style/styleNumpadButton" />
+
+                <Button
+                    android:id="@+id/btnFour"
+                    style="@style/styleNumpadButton"
+                    android:text="4"/>
+                <Button
+                    android:id="@+id/btnOne"
+                    style="@style/styleNumpadButton"
+                    android:text="1"/>
+                <Button
+                    android:id="@+id/btnDot"
+                    style="@style/styleNumpadButton"
+                    android:text="."/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/btnEight"
+                    style="@style/styleNumpadButton"
+                    android:text="8"/>
+
+                <Button
+                    android:id="@+id/btnFive"
+                    style="@style/styleNumpadButton"
+                    android:text="5"/>
+
+                <Button
+                    android:id="@+id/btnTwo"
+                    style="@style/styleNumpadButton"
+                    android:text="2"/>
+
+                <Button
+                    android:id="@+id/btnZero"
+                    style="@style/styleNumpadButton"
+                    android:text="0"/>
+
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/btnNine"
+                    style="@style/styleNumpadButton"
+                    android:text="9"/>
+
+                <Button
+                    android:id="@+id/btnSix"
+                    style="@style/styleNumpadButton"
+                    android:text="6"/>
+                <Button
+                    android:id="@+id/btnThree"
+                    style="@style/styleNumpadButton"
+                    android:text="3"/>
+                <Button
+                    android:id="@+id/btnResult"
+                    style="@style/styleNumpadButton"
+                    android:text="="/>
+
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:orientation="vertical"
+            android:background="@color/colorArithmeticPadGray">
+
+            <Button
+                android:id="@+id/btnDelete"
+                android:text="DEL"
+                style="@style/styleArithmeticButtons" />
+            <Button
+                android:id="@+id/btnDivide"
+                style="@style/styleArithmeticButtons"
+                android:text="/"/>
+            <Button
+                android:id="@+id/btnMultiply"
+                style="@style/styleArithmeticButtons"
+                android:text="*"/>
+            <Button
+                android:id="@+id/btnMinus"
+                style="@style/styleArithmeticButtons"
+                android:text="-"/>
+
+            <Button
+                android:id="@+id/btnPlus"
+                style="@style/styleArithmeticButtons"
+                android:text="+"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="0.05"
+            android:layout_height="match_parent"
+            android:background="@color/colorTrigoPadCyan">
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
