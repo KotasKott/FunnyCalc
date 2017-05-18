@@ -49,7 +49,7 @@
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_weight="0.75"
+            android:layout_weight="0.8"
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:background="@color/colorNumPadGray">
@@ -129,9 +129,9 @@
                     style="@style/styleNumpadButton"
                     android:text="3"/>
                 <Button
-                    android:id="@+id/btnResult"
                     style="@style/styleNumpadButton"
-                    android:text="="/>
+                    />
+
 
 
 
@@ -143,40 +143,163 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.2"
-            android:orientation="vertical"
+            android:layout_weight="0.4"
+            android:orientation="horizontal"
             android:background="@color/colorArithmeticPadGray">
 
-            <Button
-                android:id="@+id/btnDelete"
-                android:text="DEL"
-                style="@style/styleArithmeticButtons" />
-            <Button
-                android:id="@+id/btnDivide"
-                style="@style/styleArithmeticButtons"
-                android:text="/"/>
-            <Button
-                android:id="@+id/btnMultiply"
-                style="@style/styleArithmeticButtons"
-                android:text="*"/>
-            <Button
-                android:id="@+id/btnMinus"
-                style="@style/styleArithmeticButtons"
-                android:text="-"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
 
-            <Button
-                android:id="@+id/btnPlus"
-                style="@style/styleArithmeticButtons"
-                android:text="+"/>
 
+                <Button
+                    android:id="@+id/btnDivide"
+                    style="@style/styleArithmeticButtons"
+                    android:text="/"/>
+                <Button
+                    android:id="@+id/btnMultiply"
+                    style="@style/styleArithmeticButtons"
+                    android:text="*"/>
+                <Button
+                    android:id="@+id/btnMinus"
+                    style="@style/styleArithmeticButtons"
+                    android:text="-"/>
+
+                <Button
+                    android:id="@+id/btnPlus"
+                    style="@style/styleArithmeticButtons"
+                    android:text="+"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/btnDelete"
+                    android:text="DEL"
+                    style="@style/styleArithmeticButtons" />
+                <Button
+                    style="@style/styleArithmeticButtons" />
+                <Button
+                    style="@style/styleArithmeticButtons" />
+
+                <Button
+                    android:id="@+id/btnResult"
+                    android:text="="
+                    style="@style/styleArithmeticButtons" />
+
+
+
+            </LinearLayout>
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_weight="0.05"
+            android:layout_weight="0.7"
             android:layout_height="match_parent"
+            android:orientation="horizontal"
             android:background="@color/colorTrigoPadCyan">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Button
+                    style="@style/styleTrigoButton"
+                    android:text="INV"
+                   />
+
+                <Button
+                    style="@style/styleTrigoButton"
+                    android:text="sin"
+                    />
+                <Button
+                    style="@style/styleTrigoButton"
+                    android:text="ln"
+                    />
+                <Button
+                    style="@style/styleTrigoButton"
+                    android:text="n"
+                    />
+                <Button
+                    style="@style/styleTrigoButton"
+                    android:text="("
+                    />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Button
+                    android:text="DEG"
+                    style="@style/styleTrigoButton" />
+                <Button
+                    style="@style/styleTrigoButton"
+                    android:text="cos"
+                    />
+                <Button
+                    style="@style/styleTrigoButton"
+                    android:text="log"
+                    />
+                <Button
+                    style="@style/styleTrigoButton"
+                    android:text="e"
+                    />
+                <Button
+                    style="@style/styleTrigoButton"
+                    android:text=")"
+                    />
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Button
+                    android:text="%"
+                    style="@style/styleTrigoButton" />
+                <Button
+                    style="@style/styleTrigoButton"
+                    android:text="tan"
+                    />
+                <Button
+                    style="@style/styleTrigoButton"
+                    android:text="!"
+                    />
+                <Button
+                    style="@style/styleTrigoButton"
+                    android:text="^"
+                    />
+                <Button
+                    style="@style/styleTrigoButton"
+                    android:text="("
+                    />
+
+
+            </LinearLayout>
+
+
+
 
         </LinearLayout>
 

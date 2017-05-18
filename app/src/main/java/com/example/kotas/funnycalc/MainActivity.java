@@ -6,10 +6,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, View.OnLongClickListener {
 
     Button btnOne, btnTwo, btnThree, btnFour, btnFive, btnSix, btnSeven, btnEight, btnNine, btnZero, btnDot, btnResult, btnPlus, btnMinus, btnMultiply, btnDivide, btnDel;
     TextView tvResult, tvExpession;
+    String strExpression, strTempNum, strValueOne, strValueTwo;
+    boolean mAddition , mSubtract ,mMultiplication ,mDivision ;
+    Integer lengthOfFirstValue;
+    float mValueOne , mValueTwo ;
 
 
     @Override
@@ -58,6 +62,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnDel.setOnClickListener(this);
 
 
+        strExpression="";
+
+
+
 
 
     }
@@ -66,47 +74,163 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
 
 
-
         switch (v.getId()) {
             case R.id.btnOne:
-                tvExpession.setText("1");
+                strTempNum = "1";
+                strExpression += strTempNum;
+                tvExpession.setText(strExpression);
                 break;
             case R.id.btnTwo:
-                tvExpession.setText("2");
+                strTempNum = "2";
+                strExpression += strTempNum;
+                tvExpession.setText(strExpression);
                 break;
             case R.id.btnThree:
-                tvExpession.setText("3");
+                strTempNum = "3";
+                strExpression += strTempNum;
+                tvExpession.setText(strExpression);
                 break;
             case R.id.btnFour:
-                tvExpession.setText("4");
+                strTempNum = "4";
+                strExpression += strTempNum;
+                tvExpession.setText(strExpression);
                 break;
             case R.id.btnFive:
-                tvExpession.setText("5");
+                strTempNum = "5";
+                strExpression += strTempNum;
+                tvExpession.setText(strExpression);
                 break;
             case R.id.btnSix:
-                tvExpession.setText("6");
+                strTempNum = "6";
+                strExpression += strTempNum;
+                tvExpession.setText(strExpression);
                 break;
             case R.id.btnSeven:
-                tvExpession.setText("7");
+                strTempNum = "7";
+                strExpression += strTempNum;
+                tvExpession.setText(strExpression);
                 break;
             case R.id.btnEight:
-                tvExpession.setText("8");
+                strTempNum = "8";
+                strExpression += strTempNum;
+                tvExpession.setText(strExpression);
                 break;
             case R.id.btnNine:
-                tvExpession.setText("9");
+                strTempNum = "9";
+                strExpression += strTempNum;
+                tvExpession.setText(strExpression);
                 break;
             case R.id.btnZero:
-                tvExpession.setText("0");
-                break;
-            case R.id.btnDelete:
-                tvExpession.setText("0");
+                strTempNum = "0";
+                strExpression += strTempNum;
+                tvExpession.setText(strExpression);
                 break;
             case R.id.btnDot:
-                tvExpession.setText(".");
+                strTempNum = ".";
+                strExpression += strTempNum;
+                tvExpession.setText(strExpression);
                 break;
+            case R.id.btnDelete:
+                strTempNum = "";
+                strExpression = strExpression.substring(0, strExpression.length() - 1);
+                strExpression += strTempNum;
+                tvExpession.setText(strExpression);
+                break;
+
+            case R.id.btnPlus:
+
+                if (tvExpession == null) {
+                    tvExpession.setText("");
+                } else {
+                    mValueOne = Float.parseFloat(tvExpession.getText() + "");
+                    mAddition = true;
+                    tvResult.setText(mValueOne + "");
+                    strExpression = "";
+                    tvExpession.setText(strExpression);
+                }
+                break;
+
+            case R.id.btnMinus:
+                if (tvExpession == null) {
+                    tvExpession.setText("");
+                } else {
+                    mValueOne = Float.parseFloat(tvExpession.getText() + "");
+                    mSubtract = true;
+                    tvResult.setText(mValueOne + "");
+                    strExpression = "";
+                    tvExpession.setText(strExpression);
+                }
+                break;
+
+            case R.id.btnDivide:
+                if (tvExpession == null) {
+                    tvExpession.setText("");
+                } else {
+                    mValueOne = Float.parseFloat(tvExpession.getText() + "");
+                    mDivision = true;
+                    tvResult.setText(mValueOne + "");
+                    strExpression = "";
+                    tvExpession.setText(strExpression);
+                }
+                break;
+            case R.id.btnMultiply:
+                if (tvExpession == null) {
+                    tvExpession.setText("");
+                } else {
+                    mValueOne = Float.parseFloat(tvExpession.getText() + "");
+                    mMultiplication = true;
+                    tvResult.setText(mValueOne + "");
+                    strExpression = "";
+                    tvExpession.setText(strExpression);
+                }
+                break;
+
+            case R.id.btnResult:
+
+                mValueTwo = Float.parseFloat(tvExpession.getText() + "");
+
+                if (mAddition == true) {
+
+                    tvResult.setText(mValueOne + mValueTwo + "");
+                    mAddition = false;
+                }
+
+
+                if (mSubtract == true) {
+                    tvResult.setText(mValueOne - mValueTwo + "");
+                    mSubtract = false;
+                }
+
+                if (mMultiplication == true) {
+                    tvResult.setText(mValueOne * mValueTwo + "");
+                    mMultiplication = false;
+                }
+
+                if ((mDivision == true) & (mValueTwo != 0)) {
+
+                    tvResult.setText(mValueOne / mValueTwo + "");
+                    mDivision = false;
+                    break;
+
+
+                } else {
+                    tvResult.setText("ERROR!!! Division by Zero!" );
+                    mDivision = false;
+                    break;
+                }
+
+
         }
-
-
     }
 
+    @Override
+    public boolean onLongClick(View v) {
+        switch (v.getId()) {
+            case R.id.btnDelete:
+                strExpression = "";
+                tvExpession.setText("0");
+
+        }
+        return false;
+    }
 }

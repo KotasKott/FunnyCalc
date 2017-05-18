@@ -8,5 +8,6 @@
     <color name="colorNumPadGray">#434343</color>
     <color name="colorArithmeticPadGray">#636363</color>
     <color name="colorTrigoPadCyan">#1de9b6</color>
+    <color name="colorTrigoButtonText">#434343</color>
 
 </resources>
